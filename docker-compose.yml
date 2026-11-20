@@ -1,0 +1,13 @@
+services:
+  upload-api:
+    build:
+      context: ./UploadAPI
+      dockerfile: Dockerfile
+    container_name: p6_upload_api
+    ports:
+      - "5000:8080"
+    volumes:
+      - secure_storage:/var/app/storage_outside_webroot
+
+volumes:
+  secure_storage:
